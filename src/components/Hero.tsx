@@ -1,5 +1,6 @@
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profileImg from '@/assets/yazid_boujelben_1.png';
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -10,7 +11,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="accueil" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="accueil" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-18">
       {/* Background Pattern */}
       <div className="absolute inset-0 hero-pattern"></div>
       
@@ -23,14 +24,14 @@ export const Hero = () => {
         <div className="space-y-8 animate-fade-in">
 
           {/* Profile Image */}
-          <div className="flex justify-center mb-8">
-            <div className="relative">
-              <div className="w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-strong">
+          <div className="flex justify-center items-center mb-8">
+            <div className="relative flex items-center justify-center">
+              <div className="w-36 h-36 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-strong flex items-center justify-center">
                 <img 
-                  src="/yazid boujelben 1.png" 
+                  src="/public/yazid_image.png" 
                   alt="Yazid Boujelben" 
-                  className="w-full h-full object-cover object-center scale-110"
-                  style={{ objectPosition: '50% 0%' }}
+                  className="w-full h-full object-cover mx-auto"
+                  style={{ objectPosition: '40% 50%' }}
                 />
               </div>
               {/* Decoration ring */}
@@ -51,7 +52,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col gap-6 justify-center items-center pt-6">
+          <div className="flex flex-col gap-3 justify-center items-center pt-2">
             {/* Primary Action Button */}
             <Button
               size="lg"
@@ -65,7 +66,7 @@ export const Hero = () => {
             {/* Secondary Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
-                <a href="/cv-yazid-boujelben.pdf" download="CV-Yazid-Boujelben.pdf">
+                <a href="/Yazid_boujelben_CV.pdf" download="Yazid_Boujelben_CV.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   Télécharger CV
                 </a>

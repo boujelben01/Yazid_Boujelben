@@ -42,7 +42,7 @@ export const Header = () => {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center h-28">
+        <div className="flex justify-between items-center h-12">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a
@@ -51,7 +51,7 @@ export const Header = () => {
                 e.preventDefault();
                 scrollToSection("#accueil");
               }}
-              className="text-2xl lg:text-3xl font-bold gradient-text cursor-pointer"
+              className="text-xl lg:text-xl font-bold gradient-text cursor-pointer"
             >
             </a>
           </div>
