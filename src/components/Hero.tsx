@@ -1,6 +1,5 @@
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImg from '@/assets/yazid_boujelben_1.png';
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -28,7 +27,7 @@ export const Hero = () => {
             <div className="relative flex items-center justify-center">
               <div className="w-36 h-36 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-strong flex items-center justify-center">
                 <img 
-                  src="/public/yazid_image.png" 
+                  src="Yazid_image.png" 
                   alt="Yazid Boujelben" 
                   className="w-full h-full object-cover mx-auto"
                   style={{ objectPosition: '40% 50%' }}
@@ -43,7 +42,7 @@ export const Hero = () => {
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold">
             <span className="gradient-text">Yazid</span>
             <br />
-            <span className="text-foreground">Boujelben</span>
+            <span className="text-foreground">BOUJELBEN</span>
           </h1>
 
           {/* Tagline */}
@@ -66,7 +65,7 @@ export const Hero = () => {
             {/* Secondary Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
-                <a href="/Yazid_boujelben_CV.pdf" download="Yazid_Boujelben_CV.pdf">
+                <a href="Yazid_boujelben_CV.pdf" download="Yazid_boujelben_CV.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   Télécharger CV
                 </a>
