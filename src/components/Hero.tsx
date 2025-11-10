@@ -65,7 +65,7 @@ export const Hero = () => {
             {/* Secondary Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
-                <a href="Yazid_boujelben_CV.pdf" download="CV_Yazid_BOUJELBEN.pdf">
+                <a href="CV_Yazid_BOUJELBEN.pdf" download="CV_Yazid_BOUJELBEN.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   Télécharger CV
                 </a>
