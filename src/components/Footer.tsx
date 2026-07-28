@@ -4,13 +4,11 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-8 border-t border-border bg-card/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="text-lg font-medium">© {currentYear} Yazid Boujelben</span>
-          </div>
-        </div>
+    <footer className="border-t border-border/70 bg-background/90 py-4 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-center px-4 text-center text-sm text-muted-foreground sm:px-6 lg:px-8">
+        <p className="font-medium text-foreground/80">
+          © {currentYear} Yazid BOUJELBEN
+        </p>
       </div>
     </footer>
   );

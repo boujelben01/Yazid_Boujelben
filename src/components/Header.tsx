@@ -5,60 +5,48 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navigation = [
     { name: "Accueil", href: "#accueil" },
     { name: "À propos", href: "#apropos" },
-    { name: "Expérience", href: "#experience" },
     { name: "Formation", href: "#formation" },
+    { name: "Expérience", href: "#experience" },
     { name: "Projets", href: "#projets" },
     { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+    const element = document.querySelector(href) as HTMLElement | null;
+    const headerEl = document.querySelector('header') as HTMLElement | null;
+    const headerHeight = headerEl ? headerEl.offsetHeight : 0;
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const top = element.getBoundingClientRect().top + window.pageYOffset - headerHeight - 1; // increased gap to hide decorative lines
+      window.scrollTo({ top, behavior: 'smooth' });
     }
     setIsOpen(false);
   };
 
-  return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-soft"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center h-12">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <a
-              href="#accueil"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("#accueil");
-              }}
-              className="text-xl lg:text-xl font-bold gradient-text cursor-pointer"
-            >
-            </a>
-          </div>
+  // compute header height and publish as CSS variable for exact anchor offsets
+  useEffect(() => {
+    const setOffset = () => {
+      const headerEl = document.querySelector('header') as HTMLElement | null;
+      const headerHeight = headerEl ? headerEl.offsetHeight : 0;
+      // increased extra gap (20px) to hide thin decorative lines under sections
+      const offset = headerHeight + 1;
+      document.documentElement.style.setProperty('--scroll-offset', `${offset}px`);
+    };
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-12 flex items-baseline space-x-10">
+    setOffset();
+    window.addEventListener('resize', setOffset);
+    return () => window.removeEventListener('resize', setOffset);
+  }, []);
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 bg-background/95 border-b border-border/70">
+      <nav className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex w-full items-center justify-between">
+          <div className="hidden md:flex flex-1 justify-center">
+            <div className="flex items-center gap-2 rounded-full border border-border/70 bg-card/90 px-2 py-1.5">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -67,7 +55,7 @@ export const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="text-lg text-foreground hover:text-primary transition-colors duration-200 cursor-pointer font-medium px-3 py-2"
+                  className="rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition duration-200 hover:bg-primary/15 hover:text-primary whitespace-nowrap"
                 >
                   {item.name}
                 </a>
@@ -75,32 +63,34 @@ export const Header = () => {
             </div>
           </div>
 
-          {/* Theme Toggle & Mobile Menu */}
-          <div className="flex items-center space-x-4">
-            <div className="scale-125">
+          <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center rounded-full border border-border/70 bg-background/70 px-2 py-1.5 text-sm text-foreground/80 shadow-sm">
               <ThemeToggle />
             </div>
-            <div className="md:hidden">
+
+            <div className="flex items-center gap-2 md:hidden">
+              <div className="scale-110">
+                <ThemeToggle />
+              </div>
               <Button
                 variant="ghost"
                 size="lg"
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-12 h-12 rounded-full"
+                className="h-9 w-9 rounded-full bg-card/90 border border-border/70"
               >
                 {isOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="h-5 w-5" />
                 ) : (
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-5 w-5" />
                 )}
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-4 pt-4 pb-6 space-y-2 bg-card border border-border rounded-lg mt-4 shadow-soft">
+            <div className="mt-4 space-y-2 rounded-3xl border border-border/70 bg-card/95 p-4 shadow-soft backdrop-blur-xl">
               {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -109,7 +99,7 @@ export const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="block px-4 py-3 text-lg text-foreground hover:text-primary hover:bg-accent rounded-lg font-medium transition-colors cursor-pointer"
+                  className="block rounded-full px-4 py-3 text-base font-semibold text-foreground transition-colors hover:bg-primary/10 hover:text-primary"
                 >
                   {item.name}
                 </a>

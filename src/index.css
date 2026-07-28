@@ -8,103 +8,96 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    --background: 210 40% 98%;
+    --foreground: 224 71% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 224 71% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 224 71% 12%;
 
-    --primary: 215 70% 55%;
+    --primary: 199 89% 48%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 220 15% 20%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 224 71% 12%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 215 30% 92%;
-    --accent-foreground: 215 70% 55%;
+    --accent: 267 78% 62%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 60%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 215 70% 55%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 199 89% 48%;
 
-    --success: 145 70% 50%;
-    --warning: 45 90% 60%;
-    
-    --gradient-primary: linear-gradient(135deg, hsl(215 70% 55%), hsl(195 85% 65%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
-    --gradient-dark: linear-gradient(135deg, hsl(220 25% 15%), hsl(215 30% 25%));
-    
-    --shadow-soft: 0 4px 20px -4px hsl(215 70% 55% / 0.15);
-    --shadow-strong: 0 20px 40px -20px hsl(215 70% 55% / 0.3);
+    --success: 145 63% 49%;
+    --warning: 38 92% 50%;
 
-    --radius: 0.75rem;
+    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(267 78% 62%));
+    --gradient-subtle: linear-gradient(135deg, hsl(210 40% 99% / 0.04), hsl(220 20% 96% / 0.03));
+    --gradient-dark: linear-gradient(135deg, hsl(224 71% 10% / 0.04), hsl(222 47% 18% / 0.03));
 
-    --sidebar-background: 0 0% 98%;
+    --shadow-soft: 0 10px 30px -12px hsl(199 89% 48% / 0.18);
+    --shadow-strong: 0 24px 60px -24px hsl(199 89% 48% / 0.25);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --radius: 1rem;
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-background: 210 40% 99%;
+    --sidebar-foreground: 224 71% 12%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 224 71% 12%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 199 89% 48%;
   }
 
   .dark {
-    --background: 220 25% 12%;
-    --foreground: 220 15% 90%;
+    --background: 224 71% 8%;
+    --foreground: 213 31% 91%;
 
-    --card: 220 20% 15%;
-    --card-foreground: 220 15% 90%;
+    --card: 222 47% 11%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 220 20% 15%;
-    --popover-foreground: 220 15% 90%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 215 70% 60%;
-    --primary-foreground: 220 25% 12%;
+    --primary: 199 89% 58%;
+    --primary-foreground: 224 71% 8%;
 
-    --secondary: 220 15% 20%;
-    --secondary-foreground: 220 15% 90%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 213 31% 91%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 72%;
 
-    --accent: 220 15% 25%;
-    --accent-foreground: 215 70% 60%;
+    --accent: 267 78% 70%;
+    --accent-foreground: 224 71% 8%;
 
-    --destructive: 0 75% 65%;
-    --destructive-foreground: 220 25% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 224 71% 8%;
 
-    --border: 220 15% 25%;
-    --input: 220 15% 25%;
-    --ring: 215 70% 60%;
-    
-    --gradient-primary: linear-gradient(135deg, hsl(215 70% 60%), hsl(195 85% 70%));
-    --gradient-subtle: linear-gradient(180deg, hsl(220 25% 12%), hsl(220 20% 15%));
-    --gradient-dark: linear-gradient(135deg, hsl(220 30% 8%), hsl(215 35% 18%));
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 199 89% 58%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(199 89% 58%), hsl(267 78% 70%));
+    --gradient-subtle: linear-gradient(135deg, hsl(224 71% 8%), hsl(222 47% 16%));
+    --gradient-dark: linear-gradient(135deg, hsl(224 71% 6%), hsl(222 47% 14%));
+    --sidebar-background: 224 71% 8%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 199 89% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 217 33% 22%;
+    --sidebar-ring: 199 89% 58%;
   }
 }
 
@@ -114,21 +107,64 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground scroll-smooth;
+    @apply min-h-screen bg-background text-foreground scroll-smooth antialiased;
+    /* Use a uniform background color to avoid banding/reflection */
+    background-image: none;
+    background: hsl(var(--background));
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
   .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .hero-pattern {
     background: var(--gradient-subtle);
   }
-  
+
   .dark .hero-pattern {
     background: var(--gradient-dark);
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/10 bg-card/70 backdrop-blur-xl shadow-soft;
+  }
+
+  .section-shell {
+    @apply py-24 sm:py-28;
+    /* use dynamic CSS variable set at runtime to match header height exactly */
+    scroll-margin-top: var(--scroll-offset, 64px);
+  }
+
+  /* Ensure anchor targets (including the hero) account for the fixed header height */
+  section,
+  #accueil {
+    scroll-margin-top: var(--scroll-offset, 64px);
+  }
+
+  /* Additionally set a global scroll padding for smoother behavior in some browsers */
+  html {
+    scroll-padding-top: var(--scroll-offset, 64px);
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-semibold tracking-tight text-foreground;
+  }
+
+  .section-subtitle {
+    @apply mt-4 text-lg text-muted-foreground max-w-2xl mx-auto;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary;
   }
 }
